@@ -1,5 +1,4 @@
 var Entities = require("entities");
-var FS = require('fs');
 var url = require('url');
 var XML2JS = require('xml2js');
 
@@ -217,10 +216,4 @@ Parser.parseURL = function(feedUrl, callback) {
     })
   })
   req.on('error', callback);
-}
-
-Parser.parseFile = function(file, callback) {
-  FS.readFile(file, 'utf8', function(err, contents) {
-    return Parser.parseString(contents, callback);
-  })
 }
